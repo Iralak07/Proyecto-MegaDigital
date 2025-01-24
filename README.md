@@ -104,7 +104,6 @@ deseadas)
 ### Paso 2: Inicialización del Proyecto
   
   #### Inicia un nuevo proyecto de Node.js
-    ```bash
     
       npm init -y
 
@@ -114,7 +113,7 @@ deseadas)
     npm install express mysql2
 
 
-####Instala las dependencias de desarrollo:
+#### Instala las dependencias de desarrollo:
 
     npm install -D typescript @types/node @types/express
     
