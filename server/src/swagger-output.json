@@ -13,10 +13,53 @@
   "paths": {
     "/api/personas": {
       "get": {
-        "description": "",
+        "tags": [
+          "Personas"
+        ],
+        "description": "Obtener Personas",
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Personas"
+        ],
+        "description": "Crear nueva persona",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nombrecompleto": {
+                  "example": "any"
+                },
+                "nrodocumento": {
+                  "example": "any"
+                },
+                "correo": {
+                  "example": "any"
+                },
+                "telefono": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"
@@ -26,7 +69,87 @@
     },
     "/api/personas/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Personas"
+        ],
+        "description": "Obtener Personas por id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Personas"
+        ],
+        "description": "Actualizar los datos de una persona",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nombrecompleto": {
+                  "example": "any"
+                },
+                "nrodocumento": {
+                  "example": "any"
+                },
+                "correo": {
+                  "example": "any"
+                },
+                "telefono": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Personas"
+        ],
+        "description": "Eliminar a una persona por su id",
         "parameters": [
           {
             "name": "id",

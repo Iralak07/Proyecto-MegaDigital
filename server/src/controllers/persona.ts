@@ -4,6 +4,8 @@ import { Request, Response } from 'express';
 
 // Obtener todas las personas
 export const obtenerPersonas = async (req: Request, res: Response): Promise<void> => {
+    // #swagger.tags = ['Personas']
+    // #swagger.description = 'Obtener Personas'
     try {
         const query = `SELECT id, nombrecompleto, nrodocumento, correo, telefono FROM persona`;
         
@@ -18,6 +20,8 @@ export const obtenerPersonas = async (req: Request, res: Response): Promise<void
 
 // Obtener una persona por ID
 export const obtenerPersonaPorId = async (req: Request, res: Response): Promise<void> => {
+    // #swagger.tags = ['Personas']
+    // #swagger.description = 'Obtener Personas por id'
     const { id } = req.params;
 
     if (!id || isNaN(Number(id))) {
@@ -44,6 +48,8 @@ export const obtenerPersonaPorId = async (req: Request, res: Response): Promise<
 
 // Crear una nueva persona
 export const crearPersona = async (req: Request, res: Response): Promise<void> => {
+    // #swagger.tags = ['Personas']
+    // #swagger.description = 'Crear nueva persona'
     const { nombrecompleto, nrodocumento, correo, telefono } = req.body;
 
     if (!nombrecompleto || !nrodocumento || !correo) {
@@ -67,6 +73,8 @@ export const crearPersona = async (req: Request, res: Response): Promise<void> =
 
 // Actualizar una persona
 export const actualizarPersona = async (req: Request, res: Response): Promise<void> => {
+    // #swagger.tags = ['Personas']
+    // #swagger.description = 'Actualizar los datos de una persona'
     const { id } = req.params;
     const { nombrecompleto, nrodocumento, correo, telefono } = req.body;
 
@@ -104,6 +112,8 @@ export const actualizarPersona = async (req: Request, res: Response): Promise<vo
 
 // Eliminar una persona
 export const eliminarPersona = async (req: Request, res: Response): Promise<void> => {
+    // #swagger.tags = ['Personas']
+    // #swagger.description = 'Eliminar a una persona por su id'
     const { id } = req.params;
 
     if (!id || isNaN(Number(id))) {
