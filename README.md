@@ -91,6 +91,43 @@ deseadas)
     );
 
 
+## Instalación y Configuración del Proyecto
+
+### Paso 1: Instalación de Node.js
+1. Descarga e instala [Node.js](https://nodejs.org/)
+2. Verifica la instalación:
+   ```bash
+   node -v
+   npm -v
+
+
+### Paso 2: Inicialización del Proyecto
+  
+  #### Inicia un nuevo proyecto de Node.js
+    ```bash
+    
+      npm init -y
+
+      
+  #### Instala las dependencias principales:
+  
+    npm install express mysql2
+
+
+####Instala las dependencias de desarrollo:
+
+    npm install -D typescript @types/node @types/express
+    
+#### Instala Swagger para la documentación de la API:
+
+    npm install swagger-ui-express swagger-jsdoc
+
+### Paso 3: Configuración de TypeScript
+
+#### Crea el archivo de configuración tsconfig.json:
+
+    npx tsc --init
+
 
 
 
