@@ -1,0 +1,64 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+
+# Build output
+dist/
+build/
+out/
+
+# Dependency directories
+jspm_packages/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage directories
+coverage/
+
+# Cache directories
+.cache/
+.nyc_output/
+
+# Testing output
+*.lcov
+*.lcov.json
+
+# TypeScript specific
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm/
+
+# Yarn/PNPM/Lock files (if you're using one, ignore the others)
+.pnpm-debug.log
+.pnp/
+.pnp.js
+yarn.lock
+
+# Miscellaneous
+!.github
+!.gitlab

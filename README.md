@@ -90,7 +90,9 @@ deseadas)
       FOREIGN KEY (personaid) REFERENCES persona(id)
     );
 
-    
+
+
+
 
   
 
