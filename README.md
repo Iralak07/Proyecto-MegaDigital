@@ -115,11 +115,11 @@ deseadas)
 
 #### Instala las dependencias de desarrollo:
 
-    npm install -D typescript @types/node @types/express
+    npm install -D typescript @types/node @types/express nodemon
     
 #### Instala Swagger para la documentación de la API:
 
-    npm install swagger-ui-express swagger-jsdoc
+    npm install swagger-ui-express swagger-autogen
 
 ### Paso 3: Configuración de TypeScript
 
