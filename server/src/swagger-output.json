@@ -30,7 +30,7 @@
         "tags": [
           "Personas"
         ],
-        "description": "Crear nueva persona",
+        "description": "Crear una nueva persona",
         "parameters": [
           {
             "name": "body",
@@ -38,13 +38,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "nombrecompleto": {
+                "correo": {
                   "example": "any"
                 },
                 "nrodocumento": {
                   "example": "any"
                 },
-                "correo": {
+                "nombrecompleto": {
                   "example": "any"
                 },
                 "telefono": {
@@ -60,6 +60,12 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
           },
           "500": {
             "description": "Internal Server Error"
@@ -114,13 +120,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "nombrecompleto": {
+                "correo": {
                   "example": "any"
                 },
                 "nrodocumento": {
                   "example": "any"
                 },
-                "correo": {
+                "nombrecompleto": {
                   "example": "any"
                 },
                 "telefono": {
@@ -139,6 +145,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
           },
           "500": {
             "description": "Internal Server Error"
@@ -164,6 +173,336 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/habitaciones": {
+      "get": {
+        "tags": [
+          "Habitaciones"
+        ],
+        "description": "Obtener Habitaciones",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Habitaciones"
+        ],
+        "description": "Crear Habitaciones",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "habitacionpiso": {
+                  "example": "any"
+                },
+                "habitacionnro": {
+                  "example": "any"
+                },
+                "cantcamas": {
+                  "example": "any"
+                },
+                "tienetelevision": {
+                  "example": "any"
+                },
+                "tienefrigobar": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/habitaciones/{id}": {
+      "get": {
+        "tags": [
+          "Habitaciones"
+        ],
+        "description": "Obtener Habitaciones por id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "ID de la habitacion"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Habitaciones"
+        ],
+        "description": "Actualizar Habitaciones",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "habitacionpiso": {
+                  "example": "any"
+                },
+                "habitacionnro": {
+                  "example": "any"
+                },
+                "cantcamas": {
+                  "example": "any"
+                },
+                "tienetelevision": {
+                  "example": "any"
+                },
+                "tienefrigobar": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Habitaciones"
+        ],
+        "description": "Eliminar Habitaciones",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/reservas": {
+      "get": {
+        "tags": [
+          "Reservas"
+        ],
+        "description": "Obtener reservas realizadas",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Reservas"
+        ],
+        "description": "Crea una reserva",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fechaentrada": {
+                  "example": "any"
+                },
+                "fechasalida": {
+                  "example": "any"
+                },
+                "habitacionid": {
+                  "example": "any"
+                },
+                "personaid": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/reservas/{id}": {
+      "get": {
+        "tags": [
+          "Reservas"
+        ],
+        "description": "Obtiene una reserva especificada por la Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Reservas"
+        ],
+        "description": "Actualiza una reserva ya hecha",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fechaentrada": {
+                  "example": "any"
+                },
+                "fechasalida": {
+                  "example": "any"
+                },
+                "habitacionid": {
+                  "example": "any"
+                },
+                "personaid": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reservas"
+        ],
+        "description": "Elimina una reserva existente",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "404": {
             "description": "Not Found"

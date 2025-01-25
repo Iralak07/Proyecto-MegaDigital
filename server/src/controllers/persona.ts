@@ -2,7 +2,7 @@ import { Persona } from '../models/persona';
 import db from '../db';
 import { Request, Response } from 'express';
 
-// Obtener todas las personas
+
 export const obtenerPersonas = async (req: Request, res: Response): Promise<void> => {
     // #swagger.tags = ['Personas']
     // #swagger.description = 'Obtener Personas'
@@ -48,8 +48,8 @@ export const obtenerPersonaPorId = async (req: Request, res: Response): Promise<
 
 // Crear una nueva persona
 export const crearPersona = async (req: Request, res: Response): Promise<void> => {
-    // #swagger.tags = ['Personas']
-    // #swagger.description = 'Crear nueva persona'
+    /* 	#swagger.tags = ['Personas']
+        #swagger.description = 'Crear una nueva persona' */
     const { nombrecompleto, nrodocumento, correo, telefono } = req.body;
 
     if (!nombrecompleto || !nrodocumento || !correo) {
@@ -66,7 +66,6 @@ export const crearPersona = async (req: Request, res: Response): Promise<void> =
             id: result.insertId,
         });
     } catch (error) {
-        console.error('Error al crear persona:', error);
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 };
