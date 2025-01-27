@@ -5,7 +5,7 @@ const doc = {
         title: 'Proyecto API documentation',
         description: 'API documentation'
     },
-    host: 'localhost:3000',
+    host: 'localhost:3001',
 };
 
 const routes = ['./index.ts',]

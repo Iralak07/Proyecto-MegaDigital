@@ -5,7 +5,7 @@
     "description": "API documentation",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "localhost:3001",
   "basePath": "/",
   "schemes": [
     "http"
@@ -389,16 +389,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fechaentrada": {
-                  "example": "any"
-                },
-                "fechasalida": {
+                "personaid": {
                   "example": "any"
                 },
                 "habitacionid": {
                   "example": "any"
                 },
-                "personaid": {
+                "fechaentrada": {
+                  "example": "any"
+                },
+                "fechasalida": {
                   "example": "any"
                 }
               }
@@ -408,6 +408,15 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
           },
           "500": {
             "description": "Internal Server Error"
@@ -479,6 +488,9 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -503,6 +515,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
