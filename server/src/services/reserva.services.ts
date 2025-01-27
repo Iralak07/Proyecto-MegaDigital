@@ -2,11 +2,7 @@
 import db from '../db';
 import { RowDataPacket } from 'mysql2';
 
-export const habitacionDisponible = async (
-    habitacionid: number,
-    fechaentrada: Date,
-    fechasalida: Date
-): Promise<boolean> => {
+export const habitacionDisponible = async (habitacionid: number,fechaentrada: Date,fechasalida: Date): Promise<boolean> => {
     const query = `
         SELECT id FROM reserva
         WHERE habitacionid = ?
@@ -17,12 +13,7 @@ export const habitacionDisponible = async (
         )
         LIMIT 1
     `;
-    const [rows]: [RowDataPacket[], any] = await db.query(query, [
-        habitacionid,
-        fechaentrada,
-        fechasalida,
-        fechaentrada,
-        fechasalida,
+    const [rows]: [RowDataPacket[], any] = await db.query(query, [habitacionid,fechaentrada,fechasalida,fechaentrada,fechasalida,
         fechaentrada,
         fechasalida,
     ]);
@@ -50,7 +41,7 @@ export const existeHabitacion = async (habitacionid: number): Promise<boolean> =
 export const obtenerReservaPorId = async (id: number): Promise<any> => {
     const query = 'SELECT * FROM reserva WHERE id = ? LIMIT 1';
     const [rows]: [RowDataPacket[], any] = await db.query(query, [id]);
-    return rows[0]; // Devuelve la primera fila (la reserva encontrada)
+    return rows[0];
 };
 
 export const validarFechaEntrada = (fecha: Date): boolean => {

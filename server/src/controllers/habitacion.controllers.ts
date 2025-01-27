@@ -16,7 +16,6 @@ export const obtenerHabitaciones = async (req: Request, res: Response): Promise<
     }
 };
 
-// Obtener una habitación por ID
 export const obtenerHabitacionPorId = async (req: Request, res: Response): Promise<void> => {
     //#swagger.tags = ['Habitaciones']
     //#swagger.description = 'Obtener Habitaciones por id'

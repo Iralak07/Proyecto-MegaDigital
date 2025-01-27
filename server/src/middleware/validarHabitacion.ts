@@ -1,4 +1,3 @@
-// middlewares/validarHabitacion.ts
 import { Request, Response, NextFunction } from 'express';
 import { validarDatosHabitacion, existeHabitacion, existeHabitacionPorId, obtenerHabitacionId } from '../services/habitacion.services';
 

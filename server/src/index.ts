@@ -4,7 +4,6 @@ import cors from 'cors';
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
 
-// Importamos las rutas
 import persona from './routes/persona';
 import habitacionRoutes from './routes/habitacionRoutes';
 import reservaRoutes from './routes/reservaRoutes';

@@ -46,7 +46,6 @@ export const obtenerPersonaPorId = async (req: Request, res: Response): Promise<
     }
 };
 
-// Crear una nueva persona
 export const crearPersona = async (req: Request, res: Response): Promise<void> => {
     /* 	#swagger.tags = ['Personas']
         #swagger.description = 'Crear una nueva persona' */
@@ -70,7 +69,6 @@ export const crearPersona = async (req: Request, res: Response): Promise<void> =
     }
 };
 
-// Actualizar una persona
 export const actualizarPersona = async (req: Request, res: Response): Promise<void> => {
     // #swagger.tags = ['Personas']
     // #swagger.description = 'Actualizar los datos de una persona'
@@ -109,7 +107,6 @@ export const actualizarPersona = async (req: Request, res: Response): Promise<vo
     }
 };
 
-// Eliminar una persona
 export const eliminarPersona = async (req: Request, res: Response): Promise<void> => {
     // #swagger.tags = ['Personas']
     // #swagger.description = 'Eliminar a una persona por su id'

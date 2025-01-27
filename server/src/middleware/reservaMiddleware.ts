@@ -1,4 +1,3 @@
-// middlewares/reserva.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { existePersona, existeHabitacion, habitacionDisponible, obtenerReservaPorId, validarFechaEntrada } from '../services/reserva.services';
 

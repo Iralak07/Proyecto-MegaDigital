@@ -1,9 +1,8 @@
-// controllers/reserva.controllers.ts
 import { Request, Response } from 'express';
 import db from '../db';
 import { calcularMontoReserva, obtenerReservaPorId } from '../services/reserva.services';
 
-// Obtener todas las reservas
+
 export const obtenerReservas = async (req: Request, res: Response): Promise<void> => {
     /* 
     #swagger.tags = ['Reservas']
@@ -19,7 +18,6 @@ export const obtenerReservas = async (req: Request, res: Response): Promise<void
     }
 };
 
-// Obtener una reserva por ID
 export const obtenerReservaPorIdController = async (req: Request, res: Response): Promise<void> => {
     /* 
     #swagger.tags = ['Reservas']
@@ -41,7 +39,6 @@ export const obtenerReservaPorIdController = async (req: Request, res: Response)
     }
 };
 
-// Crear una nueva reserva
 export const crearReserva = async (req: Request, res: Response): Promise<void> => {
         /* 
     #swagger.tags = ['Reservas']
@@ -50,10 +47,8 @@ export const crearReserva = async (req: Request, res: Response): Promise<void> =
     const { fechaentrada, fechasalida, habitacionid, personaid } = req.body;
 
     try {
-        // Calcular el monto de la reserva
         const montoreserva = calcularMontoReserva(new Date(fechaentrada), new Date(fechasalida));
 
-        // Insertar la reserva en la base de datos
         const query = `
             INSERT INTO reserva (fechareserva, fechaentrada, fechasalida, habitacionid, personaid, montoreserva)
             VALUES (NOW(), ?, ?, ?, ?, ?)
@@ -76,7 +71,6 @@ export const crearReserva = async (req: Request, res: Response): Promise<void> =
     }
 };
 
-// Actualizar una reserva
 export const actualizarReserva = async (req: Request, res: Response): Promise<void> => {
         /* 
     #swagger.tags = ['Reservas']
@@ -92,7 +86,6 @@ export const actualizarReserva = async (req: Request, res: Response): Promise<vo
             return;
         }
 
-        // Calcular el nuevo monto de la reserva si las fechas cambian
         const montoreserva = fechaentrada || fechasalida
             ? calcularMontoReserva(
                   new Date(fechaentrada || reserva.fechaentrada),
@@ -100,7 +93,6 @@ export const actualizarReserva = async (req: Request, res: Response): Promise<vo
               )
             : reserva.montoreserva;
 
-        // Actualizar la reserva
         const queryUpdate = `
             UPDATE reserva
             SET fechaentrada = ?, fechasalida = ?, habitacionid = ?, personaid = ?, montoreserva = ?
@@ -122,7 +114,6 @@ export const actualizarReserva = async (req: Request, res: Response): Promise<vo
     }
 };
 
-// Eliminar una reserva
 export const eliminarReserva = async (req: Request, res: Response): Promise<void> => {
     /* 
     #swagger.tags = ['Reservas']
