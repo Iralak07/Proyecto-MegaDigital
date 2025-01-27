@@ -127,9 +127,61 @@ deseadas)
 
     npx tsc --init
 
+### Estructura del Proyecto
+
+    ├server
+    └── src
+        ├── controllers
+        ├── middleware
+        ├── models
+        ├── routes
+        └── services
+
+1. server
+
+    Propósito: Contiene la configuración principal del servidor y archivos relacionados.
+    Archivos comunes:
+        Archivo principal del servidor (por ejemplo, server.js o index.js).
+        Configuración de conexión al servidor (puerto, base de datos, etc.).
+        Configuración inicial de dependencias (como Express, CORS, etc.).
+
+2. src
+
+    Propósito: Almacena toda la lógica de negocio de la aplicación, separada por componentes o funcionalidades específicas. Es el corazón del proyecto.
+
+3. controllers
+
+    Propósito: Controladores para manejar la lógica de las solicitudes HTTP.
+    Responsabilidades:
+        Recibir las solicitudes desde las rutas (routes).
+        Coordinar el flujo entre los servicios (services) y la respuesta al cliente.
+
+4. middleware
+
+    Propósito: Almacena funciones intermedias que se ejecutan antes de llegar a los controladores.
+
+5. models
+
+    Propósito: define la estructura de las entidades persona, reserva y habitaciones
+
+6. routes
+
+    Propósito: Define las rutas de la API y las conecta con los controladores correspondientes.
+    Responsabilidades:
+        Especificar las URLs y los métodos HTTP (GET, POST, PUT, DELETE).
+        Conectar cada ruta con su controlador.
+
+7. services
+
+    Propósito: Contiene la lógica de negocio y las interacciones con las bases de datos u otros servicios externos.
+    Responsabilidades:
+        Realizar operaciones CRUD y otras acciones complejas.
+        Mantener la lógica de negocio desacoplada de los controladores.
 
 
+### Documentacion
 
+Para la documentacion he utilizado swagger-ui express y swagger autogen http://localhost:3001/api/docs
   
 
      
